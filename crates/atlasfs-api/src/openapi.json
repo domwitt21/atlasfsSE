@@ -1,0 +1,20 @@
+{
+  "openapi": "3.1.0",
+  "info": {"title": "AtlasFS Administration API", "version": "1.0.0"},
+  "servers": [{"url": "http://127.0.0.1:8787"}],
+  "components": {
+    "securitySchemes": {"bearerAuth": {"type": "http", "scheme": "bearer"}}
+  },
+  "security": [{"bearerAuth": []}],
+  "paths": {
+    "/v1/health": {"get": {"security": [], "responses": {"200": {"description": "Healthy"}}}},
+    "/v1/files": {"get": {"parameters": [{"name": "path", "in": "query", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"description": "File bytes"}}}, "put": {"responses": {"200": {"description": "Stored"}}}, "delete": {"responses": {"200": {"description": "Removed"}}}},
+    "/v1/directories": {"get": {"responses": {"200": {"description": "Directory listing"}}}, "post": {"responses": {"201": {"description": "Created"}}}},
+    "/v1/stat": {"get": {"responses": {"200": {"description": "Metadata"}}}},
+    "/v1/history": {"get": {"responses": {"200": {"description": "Version history"}}}},
+    "/v1/snapshots": {"get": {"responses": {"200": {"description": "Snapshots"}}}, "post": {"responses": {"201": {"description": "Created"}}}},
+    "/v1/snapshot-diff": {"get": {"responses": {"200": {"description": "Snapshot differences"}}}},
+    "/v1/verify": {"post": {"responses": {"200": {"description": "Verification report"}}}},
+    "/v1/usage": {"get": {"responses": {"200": {"description": "Storage usage"}}}}
+  }
+}

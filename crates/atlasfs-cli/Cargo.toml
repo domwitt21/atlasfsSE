@@ -1,0 +1,18 @@
+[package]
+name = "atlasfs-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[[bin]]
+name = "atlas"
+path = "src/main.rs"
+
+[dependencies]
+atlasfs-api = { path = "../atlasfs-api" }
+atlasfs-core = { path = "../atlasfs-core" }
+atlasfs-fuse = { path = "../atlasfs-fuse" }
+
+[lints]
+workspace = true

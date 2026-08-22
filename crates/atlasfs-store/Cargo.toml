@@ -1,0 +1,14 @@
+[package]
+name = "atlasfs-store"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+atlasfs-platform = { path = "../atlasfs-platform" }
+fs2 = "0.4.3"
+sha2 = "0.10.9"
+
+[lints]
+workspace = true
